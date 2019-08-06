@@ -1,0 +1,15 @@
+{
+  "type": "ext",
+  "group": "io.warp10.ext.example",
+  "artifact": "my-awesome-module",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "email": "",
+  "license": "",
+  "git": "",
+  "repoUrl": "",
+  "tags": [
+    ""
+  ]
+}
