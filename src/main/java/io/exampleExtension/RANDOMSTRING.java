@@ -69,7 +69,7 @@ public class RANDOMSTRING extends FormattedWarpScriptFunction {
       end = Math.min(chars.length, end);
     }
 
-    // call functions and return result
+    // call the function and return the result
     String result = RandomStringUtils.random(count, start, end, letters, numbers, chars);
     stack.push(result);
     return stack;
