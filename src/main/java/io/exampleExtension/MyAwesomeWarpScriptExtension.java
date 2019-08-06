@@ -31,8 +31,8 @@ public class MyAwesomeWarpScriptExtension extends WarpScriptExtension {
   }
 
   static {
-    addNamedWarpScriptFunction(new RANDOMASCII("io.exampleExtension.RANDOMASCII"));
-    addNamedWarpScriptFunction(new RANDOMSTRING("io.exampleExtension.RANDOMSTRING"));
+    addNamedWarpScriptFunction(new RANDOMASCII("RANDOMASCII"));
+    addNamedWarpScriptFunction(new RANDOMSTRING("RANDOMSTRING"));
   }
 
   @Override

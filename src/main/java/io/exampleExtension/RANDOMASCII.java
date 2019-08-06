@@ -33,7 +33,7 @@ public class RANDOMASCII extends NamedWarpScriptFunction implements WarpScriptSt
 
     // get the argument and check its type
     Object o = stack.pop();
-    if (o instanceof Long) {
+    if (!(o instanceof Long)) {
       throw new WarpScriptException(getName() + " expects a LONG on top of the stack.");
     }
 

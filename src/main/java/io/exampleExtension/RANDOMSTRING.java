@@ -47,9 +47,9 @@ public class RANDOMSTRING extends FormattedWarpScriptFunction {
       .addArgument(Long.class, COUNT,  "The length of random string to create")
       .addArgument(Boolean.class, LETTERS,  "Only allow letters?")
       .addArgument(Boolean.class, NUMBERS,  "Only allow numbers?")
-      .addOptionalArgument(Long.class, START, "The position in set of chars to start at", 0)
-      .addOptionalArgument(Long.class, END, "The position in set of chars to end before", -1)
-      .addOptionalArgument(String.class, CHARS, "The set of chars to choose randoms from. If null, then it will use the set of all chars.", null)
+      .addOptionalArgument(Long.class, START, "The position in set of chars to start at", 0L)
+      .addOptionalArgument(Long.class, END, "The position in set of chars to end before", 0L)
+      .addOptionalArgument(String.class, CHARS, "The set of chars (a String) to choose randoms from. If empty, then it will use the set of all chars.", "")
       .build();
   }
 
@@ -63,6 +63,11 @@ public class RANDOMSTRING extends FormattedWarpScriptFunction {
     boolean letters = Boolean.TRUE.equals(params.get(LETTERS));
     boolean numbers = Boolean.TRUE.equals(params.get(NUMBERS));
     char[] chars = ((String) params.get(CHARS)).toCharArray();
+    if (0 == chars.length) {
+      chars = null;
+    } else {
+      end = Math.min(chars.length, end);
+    }
 
     // call functions and return result
     String result = RandomStringUtils.random(count, start, end, letters, numbers, chars);
