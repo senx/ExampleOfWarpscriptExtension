@@ -62,8 +62,8 @@ public class RANDOMSTRING extends FormattedWarpScriptFunction {
 
     //
     // Other methods for ArgumentBuilder() includes:
-    //   - addListArgument / addOptionalListArgument: same as addArgument / addOptionalArgument but for declaring argument of type List<class>
-    //   - addMapArgument / addOptionalMapArgument: same as addArgument / addOptionalArgument but for declaring argument of type Map<class>
+    //   - addListArgument / addOptionalListArgument: same as addArgument / addOptionalArgument but for List<class>
+    //   - addMapArgument / addOptionalMapArgument: same as addArgument / addOptionalArgument but for Map<class1,class2>
     //   - firstArgIsListExpandable: first argument can be passed as a list or not, in which case the result is a list or not (on head 2.1.1 since commit 0e2db1d)
     //
   }
