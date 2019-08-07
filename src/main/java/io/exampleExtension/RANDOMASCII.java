@@ -37,7 +37,7 @@ public class RANDOMASCII extends NamedWarpScriptFunction implements WarpScriptSt
       throw new WarpScriptException(getName() + " expects a LONG on top of the stack.");
     }
 
-    // convert the argument anc call function
+    // convert the argument and call function
     int count = ((Long) o).intValue();
     String result = RandomStringUtils.randomAscii(count);
 

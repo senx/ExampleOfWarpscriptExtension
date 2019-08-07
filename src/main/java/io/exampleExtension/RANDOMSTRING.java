@@ -41,7 +41,15 @@ public class RANDOMSTRING extends FormattedWarpScriptFunction {
   public RANDOMSTRING (String name) {
     super(name);
 
+    // add a description
     getDocstring().append("Creates a random string based on a variety of options.");
+
+    //
+    // Build the arguments:
+    //  - addArguments() adds a mandatory argument by its class, name and description,
+    //  - addOptionalArgument() adds an optional argument (it also requires a default value),
+    //  - build() creates and fixes the arguments of the function
+    //
 
     args = new ArgumentsBuilder()
       .addArgument(Long.class, COUNT,  "The length of random string to create")
@@ -51,6 +59,13 @@ public class RANDOMSTRING extends FormattedWarpScriptFunction {
       .addOptionalArgument(Long.class, END, "The position in set of chars to end before", 0L)
       .addOptionalArgument(String.class, CHARS, "The set of chars (a String) to choose randoms from. If empty, then it will use the set of all chars.", "")
       .build();
+
+    //
+    // Other methods for ArgumentBuilder() includes:
+    //   - addListArgument / addOptionalListArgument: same as addArgument / addOptionalArgument but for declaring argument of type List<class>
+    //   - addMapArgument / addOptionalMapArgument: same as addArgument / addOptionalArgument but for declaring argument of type Map<class>
+    //   - firstArgIsListExpandable: first argument can be passed as a list or not, in which case the result is a list or not (on head 2.1.1 since commit 0e2db1d)
+    //
   }
 
   @Override
